@@ -50,3 +50,23 @@ All PDEs, boundary conditions, and parameter settings are listed in `Appendix A`
 ## Citing RFC
 
 If you use this framework, please cite:
+Preprint and journal submission pending. GitHub DOI to be issued upon release.
+
+---
+
+## License
+
+This repository is made available for open research and collaboration under the [MIT License](LICENSE).
+
+---
+
+## Contact
+
+For correspondence, questions, or collaboration proposals:
+
+- **Author:** Allan Edward  
+- **Email:** charlieaws@yahoo.com
+
+---
+
+> “Structure, law, identity, and time are not givens—they are recursive outcomes.” — RFC
