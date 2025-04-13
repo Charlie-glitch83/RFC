@@ -663,13 +663,8 @@ RFC defines a “recursive agent” as any system maintaining symbolic identity 
 \textbf{Interpretation:}  
 An agent is not a processor of information but a stabilizer of symbolic contradiction through time. Identity becomes a recursive fixed point—measurable, simulatable, and intrinsic to the evolution of structure. 
 
-\section{Cosmic Lifecycle Revisited: Symbolic Cycles} 
-
-(Section~\ref{sec:cosmic_lifecycle} above already outlined the six major phases—Implosion, Emergence, Expansion, Saturation, Meltdown, and Reset—showing how the QV, CIF, and RFL recycle archetypal structure across recursion layers.) 
-
-\section{Cross-Disciplinary Integration and Theoretical Unification} 
-
-Recursive Fractal Cosmology (RFC) is not merely a physical model—it is a unifying symbolic engine that integrates cosmology, cognition, gauge theory, and recursive computation. By simulating symbolic PDEs across diverse domains, I demonstrate that recursion is a universal mechanism of emergence. 
+\section{Cross-Disciplinary Integration and Theoretical Unification}
+% (Section~\ref{sec:cosmic_lifecycle} above already outlined the six major phases—Implosion, Emergence, Expansion, Saturation, Meltdown, and Reset—showing how the QV, CIF, and RFL recycle archetypal structure across recursion layers.) 
 
 \subsection{Cosmology and Astrophysics} 
 
@@ -987,7 +982,7 @@ RFC-Lite serves as a reference implementation of the key recursive PDEs and is f
 \end{itemize} 
 
 \textbf{Repository:}  
-\url{https://github.com/your-handle/RFC-Lite} 
+\url{https://github.com/Charlie-glitch83/RFC} 
 
 \textbf{Sample Usage (Module A – $\Psi_{\chi}$ Cosmology):}
 \begin{verbatim}
@@ -1045,7 +1040,7 @@ While RFC originates as a symbolic field theory, it yields measurable prediction
     \item \textbf{Goal:} Correlate $\psi_{\text{self}}$ recursion stability with empirical resting-state EEG patterns \cite{Zhang2021, Suckling2008}.
 \end{itemize} 
 
-\textbf{Note:} All predictions derive from the validated simulations in Section 13 and are explicitly testable using public observational datasets and existing experimental pipelines. 
+\textbf{Note:} All predictions derive from the validated simulations in Section 14 and are explicitly testable using public observational datasets and existing experimental pipelines. 
 
 \section{Cross-Domain Simulation Validation}
 \label{sec:validation_updates} 
@@ -1120,8 +1115,8 @@ We compare RFC’s ringdown PDE (with symbolic forcing via $\Psi_{\chi}$) to sta
 
 \textbf{Results:}
 \begin{itemize}
-\item Standard waveform shows exponential damping.
-\item RFC waveform exhibits periodic echoes every $\sim$20 seconds with recursive energy structure.
+    \item Standard waveform shows exponential damping.
+    \item RFC waveform exhibits periodic echoes every $\sim$20 seconds with recursive energy structure.
 \end{itemize} 
 
 \textbf{Conclusion:}
@@ -1315,8 +1310,6 @@ Crucially, I restore the observer not as an external abstraction, but as a recur
 This reframes physics itself: not as a hunt for ultimate particles or axioms, but as the study of recursive symbolic becoming. RFC offers a field theory where meaning, structure, and cognition co-emerge through entropy compression and symbolic stratification. 
 
 The symbolic trinity of QV, CIF, and RFL forms the operational landscape of emergence. Fields like $\Psi_{\chi}$ and $\Theta_{\eta}$ encode recursive identity transitions, while $\Sigma_{\Lambda}$ and $\Omega_{\nu}$ stabilize coherence across contradictions and quantum discontinuities. 
-
-In essence, RFC is both a symbolic field theory and an epistemic engine—where existence unfolds not from fixed equations, but from recursive compression, paradox arbitration, and coherence across cycles. 
 
 \section{Limitations and Future Work}
 \label{sec:limitations} 
