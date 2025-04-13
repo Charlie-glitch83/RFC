@@ -1,0 +1,68 @@
+# --- LaTeX Build Artifacts ---
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# --- OS-Specific ---
+.DS_Store
+Thumbs.db
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+
+# --- Julia ---
+*.jl.cov
+*.jl.*~
+*.jl.old
+.julia/
+.julia_backup/
+
+# --- Wolfram/WL Temporary Files ---
+*.wl.bak
+*.nb~
+
+# --- Jupyter Notebook Checkpoints ---
+.ipynb_checkpoints/
+
+# --- Temporary Output Folders (optional, if auto-generated) ---
+results/
+logs/
+plots/
+build/
+temp/
+
+# --- VS Code or Editor Settings (optional) ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Binary Files ---
+*.png
+*.pdf
+*.svg
+*.eps
+*.jpg
+*.jpeg
+
+# --- Sim output files (if you decide not to track them) ---
+*.csv
+*.json
+*.dat
