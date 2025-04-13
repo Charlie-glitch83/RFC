@@ -49,8 +49,9 @@ All PDEs, boundary conditions, and parameter settings are listed in `Appendix A`
 
 ## Citing RFC
 
-If you use this framework, please cite:
-Preprint and journal submission pending. GitHub DOI to be issued upon release.
+If you use or reference this theory, cite it using the DOI:
+
+> Charlie-glitch83. (2025). *Recursive Fractal Cosmology (RFC)*. Zenodo. https://doi.org/10.5281/zenodo.15205532
 
 ---
 
