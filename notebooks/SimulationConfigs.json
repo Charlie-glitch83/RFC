@@ -1,0 +1,146 @@
+[
+  {
+    "module": "A",
+    "description": "Cosmological Expansion",
+    "delta": 4.669,
+    "alpha": 0.015,
+    "initial_conditions": {
+      "a(0)": 1.0,
+      "a'(0)": 0.0
+    },
+    "external_fields": {
+      "psiChi": "0.002 * Cos[0.1 * t]",
+      "gammaZeta": "0.002 * Exp[-0.05 * t]"
+    },
+    "t_range": [0, 300],
+    "dt": 0.1
+  },
+  {
+    "module": "B",
+    "description": "CP-Phase Dynamics",
+    "equation": "□Θ + λ sin(Θ) = 0",
+    "lambda": 1.2,
+    "epsilon": 3e-5,
+    "initial_conditions": {
+      "Θ(0)": 0.01,
+      "Θ'(0)": 0
+    },
+    "t_range": [0, 50],
+    "dt": 0.01
+  },
+  {
+    "module": "C",
+    "description": "Gravitational Ringdown Echo",
+    "equation": "∂²ψ/∂t² = c²∇²ψ - 0.8ψ³ + 0.1ψ + Ψχ(t)",
+    "external_fields": {
+      "psiChi": "0.01 * Cos[0.2 * t]"
+    },
+    "grid": {
+      "domain": "radial",
+      "points": 200
+    },
+    "t_range": [0, 100],
+    "dt": 0.05
+  },
+  {
+    "module": "D",
+    "description": "Recursive Entropy Collapse",
+    "equation": "S(t) = -Σ (1/δ^j) * log(1/δ^j) * e^{-αjt}",
+    "delta": 4.669,
+    "alpha": 0.015,
+    "observer_field": {
+      "ψ(0)": 0.7,
+      "ψ'(0)": 0,
+      "omegaNu": "0.01 * Exp[-0.05 * t]"
+    },
+    "t_range": [0, 150],
+    "dt": 0.1
+  },
+  {
+    "module": "E",
+    "description": "Neural Fractal PDE",
+    "grid": "128x128",
+    "forcing_field": "φτ(x, y) = Gaussian(0.01)",
+    "equation": "∂²φ/∂t² = ∇²φ - λφ + φτ",
+    "lambda": 0.05,
+    "dt": 0.1,
+    "t_range": [0, 100]
+  },
+  {
+    "module": "F",
+    "description": "Observer Identity Stability",
+    "equation": "ψ'' = -4ψ³ + βψ - Ψχ(t) - Ων(t)",
+    "beta": 0.8,
+    "external_fields": {
+      "psiChi": "0.1 * Cos[0.2 * t]",
+      "omegaNu": "0.01 * Exp[-0.05 * t]"
+    },
+    "initial_conditions": {
+      "ψ(0)": 0.7,
+      "ψ'(0)": 0
+    },
+    "t_range": [0, 100],
+    "dt": 0.01
+  },
+  {
+    "module": "G",
+    "description": "Parameter Assimilation",
+    "mcmc_sampler": "NUTS",
+    "parameters_to_fit": ["delta", "alpha", "epsilon", "lambda"],
+    "prior_ranges": {
+      "delta": [4.5, 4.7],
+      "alpha": [0.005, 0.05],
+      "epsilon": [1e-5, 5e-4],
+      "lambda": [0.01, 5]
+    },
+    "datasets": ["Planck2018", "Cyburt2016", "Zhang2021", "LIGO Echoes"]
+  },
+  {
+    "module": "H",
+    "description": "Spin Foam Quantum Geometry",
+    "partition_function": "ΣΛ(j) * ω_v * e^{iεΘ_v} * (2j+1) * A_v",
+    "SigmaLambda": "1 + 0.2 * Sin[π * j]",
+    "integration_range": "j = 0.5 to 5",
+    "output": "gauge modulation spectrum"
+  },
+  {
+    "module": "I",
+    "description": "Symbolic Mass Field (RMS)",
+    "delta": 4.669,
+    "alpha": 0.01,
+    "nu_values": [0.003, 0.006, 0.009, 0.012],
+    "t_range": [0, 60],
+    "dt": 0.1,
+    "output": "mass_spectrum.json"
+  },
+  {
+    "module": "J",
+    "description": "Observer Decoherence Divergence",
+    "beta": 0.75,
+    "external_fields": {
+      "omega": "0.01 * Exp[-0.05 * t]"
+    },
+    "initial_conditions": {
+      "psi1(0)": 0.7,
+      "psi2(0)": 0.68
+    },
+    "nu_values": [0.0025, 0.003],
+    "t_range": [0, 100],
+    "dt": 0.01,
+    "metric": "lambda_div"
+  },
+  {
+    "module": "K",
+    "description": "Collapse–Rebirth Field Dynamics",
+    "delta": 4.669,
+    "alpha": 0.01,
+    "fields": {
+      "psi_m": "sum[(1/δ)^j * Cos[j*t + ν] * Exp[-α*j*t], j=1..40]",
+      "psi_anti": "sum[(1/δ)^j * Cos[j*t - ν] * Exp[-α*j*t], j=1..40]",
+      "psi_rebirth": "sum[(1/δ)^j * Sin[j*t + j^2] * Exp[-α*j*t], j=1..40]"
+    },
+    "t_range": [0, 120],
+    "dt": 0.05,
+    "output": "collapse_rebirth_dynamics.json"
+  }
+]
