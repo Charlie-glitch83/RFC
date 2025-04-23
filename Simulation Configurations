@@ -102,5 +102,45 @@
     "SigmaLambda": "1 + 0.2 * Sin[π * j]",
     "integration_range": "j = 0.5 to 5",
     "output": "gauge modulation spectrum"
+  },
+  {
+    "module": "I",
+    "description": "Symbolic Mass Field (RMS)",
+    "delta": 4.669,
+    "alpha": 0.01,
+    "nu_values": [0.003, 0.006, 0.009, 0.012],
+    "t_range": [0, 60],
+    "dt": 0.1,
+    "output": "mass_spectrum.json"
+  },
+  {
+    "module": "J",
+    "description": "Observer Decoherence Divergence",
+    "beta": 0.75,
+    "external_fields": {
+      "omega": "0.01 * Exp[-0.05 * t]"
+    },
+    "initial_conditions": {
+      "psi1(0)": 0.7,
+      "psi2(0)": 0.68
+    },
+    "nu_values": [0.0025, 0.003],
+    "t_range": [0, 100],
+    "dt": 0.01,
+    "metric": "lambda_div"
+  },
+  {
+    "module": "K",
+    "description": "Collapse–Rebirth Field Dynamics",
+    "delta": 4.669,
+    "alpha": 0.01,
+    "fields": {
+      "psi_m": "sum[(1/δ)^j * Cos[j*t + ν] * Exp[-α*j*t], j=1..40]",
+      "psi_anti": "sum[(1/δ)^j * Cos[j*t - ν] * Exp[-α*j*t], j=1..40]",
+      "psi_rebirth": "sum[(1/δ)^j * Sin[j*t + j^2] * Exp[-α*j*t], j=1..40]"
+    },
+    "t_range": [0, 120],
+    "dt": 0.05,
+    "output": "collapse_rebirth_dynamics.json"
   }
 ]
