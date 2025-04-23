@@ -80,12 +80,52 @@ Z_fractal = Σ_{2-complexes} ∏_v ΣΛ(j_v) * ω_v * exp(i ε Θ_v) * (2j_f + 1
 # ΣΛ(j) = 1 + 0.2 sin(π j)
 
 --------------------
+Module I: Symbolic Mass Field (ψ[ν])
+--------------------
+# Recursive modal field with phase seed ν
+ψ(t; ν) = Σ_{j=1}^{40} (1/δ^j) * cos(jt + ν) * exp(-α j t)
+
+# Mass derived as:
+m(ν) = sqrt( ⟨ ψ(t; ν)^2 ⟩ )
+
+# Wolfram style:
+ψ[ν_, t_] := Sum[(1/δ)^j * Cos[j*t + ν] * Exp[-α*j*t], {j, 1, 40}]
+m[ν_] := Sqrt[Mean[ψ[ν, t]^2]]
+
+--------------------
+Module J: Observer Decoherence Divergence (λ_div)
+--------------------
+# Divergence field between two symbolic observers:
+λ_div(t) = log(1 + |ψ₁(t) - ψ₂(t)|)
+
+# ψ_i(t) = Σ_j (1/δ^j) * Cos[jt + ν_i] * Exp[-α j t)
+
+# Wolfram style:
+ψi[ν_, t_] := Sum[(1/δ)^j * Cos[j*t + ν] * Exp[-α*j*t], {j, 1, 40}]
+λdiv[ν1_, ν2_, t_] := Log[1 + Abs[ψi[ν1, t] - ψi[ν2, t]]]
+
+--------------------
+Module K: Collapse–Rebirth Field Dynamics
+--------------------
+# Collapse field from symbolic annihilation:
+S_annihil(x, t) = -Σ_j (ψ_m * ψ_anti) * log(|ψ_m - ψ_anti|)
+
+# Rebirth kernel:
+ψ_rebirth(t) = Σ_j (1/δ^j) * sin(jt + j^2) * exp(-α j t)
+
+# Wolfram style:
+ψm[t_] := ...
+ψanti[t_] := ...
+S_annihil[t_] := -Sum[ψm[t]*ψanti[t]*Log[Abs[ψm[t] - ψanti[t]]], {j, 1, 40}]
+ψ_rebirth[t_] := Sum[(1/δ)^j * Sin[j*t + j^2] * Exp[-α*j*t], {j, 1, 40}]
+
+--------------------
 Shared Recursion Operator
 --------------------
 # Recursive compression operator
 R_δ,α[f_j(t)] = Σ_j (f_j(t) / δ^j) * exp(-α j t)
 
-# Used for symbolic forcing in Friedmann, Neural, Spin Foam, and Echo modules.
+# Used for symbolic forcing in Friedmann, Mass Fields, Echoes, Spin Foam, Collapse–Rebirth, and Neural modules.
 
 --------------------
 Initialization Notes
@@ -95,7 +135,7 @@ Initialization Notes
   - 1D: 200 points
   - 2D: 128x128 periodic
 - Boundary conditions: reflective (default)
-- Symbolic fields: ψχ, Θη, ϕτ, Γζ, ΣΛ, Ων
+- Symbolic fields: ψχ, Θη, ϕτ, Γζ, ΣΛ, Ων, ψm, ψanti, ψν, λ_div, ψ_rebirth, m(ν)
 
 --------------------
 Execution Notes
@@ -105,3 +145,4 @@ Execution Notes
   - Julia + DifferentialEquations.jl
   - Python (via PyJulia or NumPy)
 - Inputs: JSON (see SimulationConfigs)
+- Modules I–K require ν-phase seed values and symbolic expression overlaps
