@@ -15,9 +15,9 @@
 
 \maketitle
 
-\section*{Appendix H: Simulation Validation Methods}
+\section*{Appendix A: Simulation Validation Methods}
 
-\subsection*{H.1 MCMC Parameter Sweep Across Domains}
+\subsection*{A.1 MCMC Parameter Sweep Across Domains}
 
 We simulate symbolic relationships between the core RFC parameter $\epsilon$ and observable results:
 
@@ -36,7 +36,7 @@ Sweep range: $\epsilon \in [10^{-5}, 5 \times 10^{-4}]$
   \item $\text{EchoDelay} = 19.3$ s
 \end{itemize}
 
-\subsection*{H.2 Observer Field Stability vs. fBm Noise}
+\subsection*{A.2 Observer Field Stability vs. fBm Noise}
 
 RFC identity field:
 \[
@@ -52,7 +52,7 @@ Control model (fBm forcing):
 
 \textbf{Result:} RFC field converges under contradiction, fBm field diverges. This confirms recursion-stabilized identity is unique to RFC.
 
-\subsection*{H.3 Gravitational Echo Comparison}
+\subsection*{A.3 Gravitational Echo Comparison}
 
 RFC PDE:
 \[
@@ -71,7 +71,7 @@ Standard ringdown:
 
 \textbf{GR Output:} Exponential decay with no recursion
 
-\subsection*{H.4 Residual Analysis: BBN + DM Halo}
+\subsection*{A.4 Residual Analysis: BBN + DM Halo}
 
 \textbf{BBN Model:}
 \[
@@ -89,7 +89,7 @@ Standard ringdown:
 
 \textbf{Fit:} Residuals $< 5\%$ to Sofue (2009) Milky Way data
 
-\subsection*{H.5 Summary Table}
+\subsection*{A.5 Summary Table}
 
 \begin{tabular}{|c|c|c|}
 \hline
@@ -104,14 +104,14 @@ BBN+Halo Fit & $Y_p = 0.261$, $<5\%$ residuals & Matches Planck, Sofue \\
 
 \vspace{1em}
 
-\section*{Appendix C: Identity Bifurcation and Recursive Agent Stability}
+\section*{Appendix B: Identity Bifurcation and Recursive Agent Stability}
 
-\subsection*{C.1 Without $\Omega_{\nu}$}
+\subsection*{B.1 Without $\Omega_{\nu}$}
 
 Initial: $\psi_{\text{self}}(0) = 0.7$, contradiction injected.  
 \textbf{Result:} Identity collapses at $t \sim 110$
 
-\subsection*{C.2 With $\Omega_{\nu}$}
+\subsection*{B.2 With $\Omega_{\nu}$}
 
 Setup: $\Omega_{\nu}(t) = 0.01 \cdot e^{-0.05t}$  
 \textbf{Result:} Field stabilizes at $0.61 \pm 0.02$
@@ -120,7 +120,7 @@ Setup: $\Omega_{\nu}(t) = 0.01 \cdot e^{-0.05t}$
 
 \vspace{1em}
 
-\section*{Appendix D: Glossary of Symbolic Fields}
+\section*{Appendix C: Glossary of Symbolic Fields}
 
 \begin{tabular}{|c|l|}
 \hline
@@ -139,14 +139,20 @@ $Y_p$ & Primordial helium mass fraction \\
 $D_f$ & EEG fractal dimension \\
 $\epsilon$ & Recursion scale parameter \\
 $\delta, \alpha$ & Depth/decay coefficients \\
+$\psi_m, \psi_{\bar{m}}$ & Matter / Antimatter modal fields \\
+$\lambda_{\text{div}}$ & Observer decoherence divergence \\
+$\psi_{\text{Rebirth}}$ & Modal attractor reinitialization field \\
+$m(\nu)$ & Symbolically derived particle mass \\
+$\nu$ & Modal phase seed \\
+$T_\nu$ & Observer-specific logical topos \\
 \hline
 \end{tabular}
 
 \vspace{1em}
 
-\section*{Appendix E: JSON Configuration for Reproducibility}
+\section*{Appendix D: JSON Configuration for Reproducibility}
 
-\subsection*{E.1 Module A (Friedmann + $\Psi_{\chi}$)}
+\subsection*{D.1 Module A (Friedmann + $\Psi_{\chi}$)}
 
 \begin{lstlisting}
 {
@@ -166,7 +172,7 @@ $\delta, \alpha$ & Depth/decay coefficients \\
 }
 \end{lstlisting}
 
-\subsection*{E.2 Module G (MCMC Inference)}
+\subsection*{D.2 Module G (MCMC Inference)}
 
 \textbf{Sampler:} No-U-Turn Sampler (NUTS)  
 \textbf{Backend:} NumPyro + GPU  
@@ -180,5 +186,46 @@ $\delta, \alpha$ & Depth/decay coefficients \\
 \end{itemize}
 
 \textbf{Fitted Parameters:} $\delta$, $\alpha$, $\epsilon$, $\lambda$
+
+\vspace{1em}
+
+\section*{Appendix E: Symbolic Mass Fields from Recursive RMS Attractors}
+
+We define:
+\[
+\psi(t; \nu) = \sum_{j=1}^{40} \left( \frac{1}{\delta} \right)^j \cos(jt + \nu) \cdot e^{-\alpha j t}
+\quad
+m(\nu) = \sqrt{ \langle \psi^2(t; \nu) \rangle }
+\]
+
+\textbf{Simulation:} RMS computed for $\nu$ values that approximate SM masses.  
+\textbf{Result:} Mass ratios emerge recursively, no Yukawa couplings required.
+
+\vspace{1em}
+
+\section*{Appendix F: Observer Bifurcation and Decoherence Divergence}
+
+We track bifurcation via:
+\[
+\lambda_{\text{div}}(t) = \log\left(1 + |\psi_i(t) - \psi_j(t)|\right)
+\]
+
+When $\lambda_{\text{div}}$ surpasses threshold, bifurcation locks — identity decoheres.
+
+\vspace{1em}
+
+\section*{Appendix G: Symbolic Collapse–Rebirth Field Simulation}
+
+Collapse occurs when:
+\[
+S_{\text{annihil}}(x,t) = -\sum_j (\psi_m \cdot \psi_{\bar{m}}) \log(|\psi_m - \psi_{\bar{m}}|)
+\]
+
+Rebirth is modeled with:
+\[
+\psi_{\text{Rebirth}}(t) = \sum_{j=1}^{40} \left( \frac{1}{\delta} \right)^j \sin(jt + j^2) e^{-\alpha j t}
+\]
+
+\textbf{Interpretation:} Collapse = symbolic resolution. Rebirth = recursive semantic reinitialization.
 
 \end{document}
