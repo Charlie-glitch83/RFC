@@ -8,12 +8,12 @@ This repository contains the core LaTeX source code, simulation schemas, and rep
 
 ## Contents
 
-- `Presentation24.tex`, `Presentation25.tex`, `Presentation26.tex` — Full RFC theory and expansion documents
-- `Appendix/` — Modular PDE details and reproducibility appendices (A–G)
-- `SimulationConfigs/` — JSON-based configurations for all RFC modules (A–K)
-- `PDE_Kernels/` — Symbolic and numerical PDE code (Wolfram, Julia, etc.)
-- `.gitignore` — Recommended exclusion rules for LaTeX, cache, and build files
-- `README.md` — You are here
+- `Presentation24.tex`, `Presentation25.tex`, `Presentation26.tex` — Full RFC theory and expansion documents  
+- `Appendix/` — Modular PDE details and reproducibility appendices (A–G)  
+- **`notebooks/SimulationConfigs.json`** — JSON-based configurations for all RFC modules (A–K)  
+- `PDE_Kernels/` — Symbolic and numerical PDE code (Wolfram, Julia, etc.)  
+- `.gitignore` — Recommended exclusion rules for LaTeX, cache, and build files  
+- `README.md` — You are here  
 
 ---
 
@@ -21,19 +21,19 @@ This repository contains the core LaTeX source code, simulation schemas, and rep
 
 RFC is implemented via a symbolic HPC pipeline with the following modules:
 
-| Module | Domain                          | PDE Field(s)               | Output |
-|--------|----------------------------------|-----------------------------|--------|
-| A      | Cosmology (Friedmann)           | `Ψχ`, `Γζ`                  | `a(t)`, `H(t)` |
-| B      | CP Phase / EDM                  | `Θη` (Sine-Gordon)          | Soliton band |
-| C      | Ringdown Echoes                 | `Ψχ`                        | Echo delay |
-| D      | Entropy Collapse                | `ψ_self`, `Ων`              | Stability field |
-| E      | Neural Dynamics                 | `ϕτ` (fractal PDE)          | EEG `D_f ≈ 2.45` |
-| F      | Observer Identity               | `ψ_self`                    | Logic bifurcation |
-| G      | MCMC Parameter Fit              | All fields                  | Unified ε, λ, δ |
-| H      | Spin Foam Embedding             | `ΣΛ`                        | Gauge modulations |
-| I      | Symbolic Mass Field             | `ψ(ν)`                      | Mass spectrum |
-| J      | Decoherence Divergence          | `λ_div`, `ψ(ν_i)`           | Divergence metric |
-| K      | Collapse–Rebirth Dynamics       | `ψ_m`, `ψ_anti`, `ψ_rebirth` | Entropy spike, rebirth field |
+| Module | Domain                          | PDE Field(s)               | Output                           |
+|--------|---------------------------------|-----------------------------|----------------------------------|
+| A      | Cosmology (Friedmann)           | `Ψχ`, `Γζ`                  | `a(t)`, `H(t)`                   |
+| B      | CP Phase / EDM                  | `Θη` (Sine-Gordon)          | Soliton band                     |
+| C      | Ringdown Echoes                 | `Ψχ`                        | Echo delay                       |
+| D      | Entropy Collapse                | `ψ_self`, `Ων`              | Stability field                  |
+| E      | Neural Dynamics                 | `ϕτ` (fractal PDE)          | EEG `D_f ≈ 2.45`                 |
+| F      | Observer Identity               | `ψ_self`                    | Logic bifurcation                |
+| G      | MCMC Parameter Fit              | All fields                  | Unified ε, λ, δ                  |
+| H      | Spin Foam Embedding             | `ΣΛ`                        | Gauge modulations                |
+| I      | Symbolic Mass Field             | `ψ(ν)`                      | Mass spectrum                    |
+| J      | Decoherence Divergence          | `λ_div`, `ψ(ν_i)`           | Divergence metric                |
+| K      | Collapse–Rebirth Dynamics       | `ψ_m`, `ψ_anti`, `ψ_rebirth`| Entropy spike, rebirth field     |
 
 ---
 
@@ -41,10 +41,10 @@ RFC is implemented via a symbolic HPC pipeline with the following modules:
 
 To reproduce any simulation:
 
-1. Clone the repo  
-2. Navigate to `SimulationConfigs/` and select a module config (e.g. `module_A.json`)  
-3. Run using `simulateRFC(...)` via the RFC kernel (Julia, Wolfram, or hybrid setup)  
-4. Results are written to `/output/` with timestamps and logs  
+1. **Clone the repo**  
+2. **Open** `notebooks/SimulationConfigs.json` and select your module entry (e.g. look for `"module": "I"`)  
+3. **Run** `notebooks/RFC_Simulator.ipynb`  
+4. **Results** are written to `/output/` with timestamps and logs  
 
 All PDEs, boundary conditions, and parameter settings are documented in `Appendix/Appendix.tex` (A–G).
 
