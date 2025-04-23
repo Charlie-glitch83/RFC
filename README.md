@@ -41,12 +41,19 @@ RFC is implemented via a symbolic HPC pipeline with the following modules:
 
 To reproduce any simulation:
 
-1. Clone the repo
-2. Navigate to `SimulationConfigs/` and select a module config (e.g. `module_A.json`)
-3. Run using `simulateRFC(...)` via the RFC kernel (Julia, Wolfram, or hybrid setup)
-4. Results are written to `/output/` with timestamps and logs
+1. Clone the repo  
+2. Navigate to `SimulationConfigs/` and select a module config (e.g. `module_A.json`)  
+3. Run using `simulateRFC(...)` via the RFC kernel (Julia, Wolfram, or hybrid setup)  
+4. Results are written to `/output/` with timestamps and logs  
 
 All PDEs, boundary conditions, and parameter settings are documented in `Appendix/Appendix.tex` (A–G).
+
+---
+
+[![Launch RFC in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Charlie-glitch83/RFC/HEAD?filepath=notebooks%2FRFC_Simulator.ipynb)
+
+> **Launch RFC Simulation Lab in Your Browser**  
+> No installation required. Run symbolic PDEs (Modules A–K) and explore field dynamics interactively.
 
 ---
 
