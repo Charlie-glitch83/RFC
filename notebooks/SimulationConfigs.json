@@ -143,4 +143,23 @@
     "dt": 0.05,
     "output": "collapse_rebirth_dynamics.json"
   }
+  {
+  "module": "L",
+  "description": "RFC vs Hidden Variable Entropy + Angular Momentum",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu_values": [0.3],
+  "lambda_values": [1.0],
+  "t_range": [0, 10],
+  "dt": 0.1,
+  "fields": {
+    "psi_RFC": "sum[(1/δ)^j * Cos[j*t + ν] * Exp[-α*j*t], j=1..40]",
+    "psi_HV": "Cos[λ*t + λ]",
+    "J_RFC": "D[psi_RFC(t), t]",
+    "J_HV": "D[psi_HV(t), t]",
+    "S_RFC": "-psi_RFC(t)^2 * Log[Abs[psi_RFC(t)^2 + 1e-10]]",
+    "S_HV": "-psi_HV(t)^2 * Log[Abs[psi_HV(t)^2 + 1e-10]]"
+  },
+  "output": "RFC_vs_HV_entropy_dynamics.json"
+  }
 ]
