@@ -231,5 +231,23 @@
   },
   "interpretation": "Symbolic collapse events in the RFC kernel create recursive curvature gradients that mimic CP-violating baryon production. Temperature decay is modeled symbolically through recursive Friedmann compression.",
   "citation": "Sultan, A. M. (2024). Compatibility of gravitational baryogenesis in f(Q,C) gravity. [https://doi.org/10.48550/arXiv.2404.00056](https://doi.org/10.48550/arXiv.2404.00056). This RFC module reframes the baryogenesis mechanism using symbolic curvature and recursion fields."
+  },
+  {
+  "module": "P",
+  "description": "RFC Baryogenesis & Dark Matter Entropy Divergence",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu_values": [0.003],
+  "t_range": [0, 60],
+  "dt": 0.1,
+  "fields": {
+    "psi_Bmeson": "Σ_j=1^40 (1/δ^j) * Cos[j*t + ν] * Exp[-α*j*t]",
+    "psi_D": "Σ_j=1^40 (1/δ^j) * Cos[j*t - ν] * Exp[-α*j*t]",
+    "missing_mass": "psi_Bmeson(t) - psi_D(t)",
+    "entropy_spike": "-(psi_Bmeson(t) - psi_D(t))^2 * Log[Abs((psi_Bmeson(t) - psi_D(t))^2 + 1e-10)]"
+  },
+  "output": "baryogenesis_dark_matter_entropy.json",
+  "interpretation": "Symbolic bifurcation between B meson and D parity modes generates entropy divergence consistent with baryogenesis. RFC fields model missing mass via recursive asymmetry.",
+  "citation": "Lees et al., BABAR Collaboration. (2023). *Search for Evidence of Baryogenesis and Dark Matter in B+ → ψD + p Decays at BABAR*. Phys. Rev. Lett. 131, 201801. https://doi.org/10.1103/PhysRevLett.131.201801. Module P adapts symbolic recursion and modal divergence in RFC to explore the entropy structure behind baryon asymmetry and dark sector formation."
   }
 ]
