@@ -210,5 +210,26 @@
   },
   "interpretation": "This simulation explores whether symbolic recursion alone can derive empirical constants like the fine-structure constant, gravitational coupling, and cosmological constant. These values emerge from the RFC kernel without being hardcoded.",
   "citation": "Pellis, M. (2024). The Dimensionless Equations of the Universe. https://doi.org/10.48550/arXiv.2403.16239. Module N builds on Pellis' proposal of dimensionless constants by showing symbolic emergence from recursive dynamics in RFC."
+  },
+  {
+  "module": "O",
+  "description": "RFC Baryogenesis from Recursive Collapse Curvature",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu": 0.006,
+  "t_range": [0, 60],
+  "dt": 0.1,
+  "fields": {
+    "kappa_rec(t)": "sum[(1/δ)^j * Laplacian[Cos[j*t + ν]] * Exp[-α*j*t], j=1..40]",
+    "T_rec(t)": "D[log(a_rec(t)), t], where a_rec(t) = sum[(1/δ)^j * Exp[-α*j*t], j=1..40]",
+    "eta_B_over_S(t)": "Grad[kappa_rec(t)] / T_rec(t)^3"
+  },
+  "outputs": {
+    "collapse_curvature": "kappa_rec(t)",
+    "symbolic_temp": "T_rec(t)",
+    "baryon_asymmetry": "eta_B_over_S(t)"
+  },
+  "interpretation": "Symbolic collapse events in the RFC kernel create recursive curvature gradients that mimic CP-violating baryon production. Temperature decay is modeled symbolically through recursive Friedmann compression.",
+  "citation": "Sultan, A. M. (2024). Compatibility of gravitational baryogenesis in f(Q,C) gravity. [https://doi.org/10.48550/arXiv.2404.00056](https://doi.org/10.48550/arXiv.2404.00056). This RFC module reframes the baryogenesis mechanism using symbolic curvature and recursion fields."
   }
 ]
