@@ -142,7 +142,7 @@
     "t_range": [0, 120],
     "dt": 0.05,
     "output": "collapse_rebirth_dynamics.json"
-  }
+  },
   {
   "module": "L",
   "description": "RFC vs Hidden Variable Entropy + Angular Momentum",
@@ -161,7 +161,7 @@
     "S_HV": "-psi_HV(t)^2 * Log[Abs[psi_HV(t)^2 + 1e-10]]"
   },
   "output": "RFC_vs_HV_entropy_dynamics.json"
-  }
+  },
   {
   "module": "M",
   "description": "Recursive Emergence of Mass and Energy",
