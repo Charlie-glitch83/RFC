@@ -162,4 +162,27 @@
   },
   "output": "RFC_vs_HV_entropy_dynamics.json"
   }
+  {
+  "module": "M",
+  "description": "Recursive Emergence of Mass and Energy",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu": 0.006,
+  "equations": {
+    "psi(t)": "Σ_{j=1}^{40} (1/δ^j) * cos(jt + ν) * exp(-αjt)",
+    "dψ/dt": "∂ψ/∂t",
+    "E(t)": "(dψ/dt)^2 + ψ(t)^2",
+    "m(ν)": "sqrt(⟨ψ(t)^2⟩)",
+    "p²": "E_avg - m²"
+  },
+  "t_range": [0, 60],
+  "dt": 0.1,
+  "outputs": {
+    "energy_curve": "E(t)",
+    "rms_mass": "m(ν)",
+    "momentum_squared": "p²"
+  },
+  "interpretation": "Mass emerges symbolically as the RMS attractor of recursive modal compression. Energy and momentum are derived without any fundamental mass term.",
+  "citation": "Pellis, M. (2024). The equations of the Unified Physics. [https://doi.org/10.48550/arXiv.2403.09724](https://doi.org/10.48550/arXiv.2403.09724). This module integrates symbolic RMS-based energy modeling as an extension of the principles in that work, interpreted through the RFC kernel structure."
+  }
 ]
