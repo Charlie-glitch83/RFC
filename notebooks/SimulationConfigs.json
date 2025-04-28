@@ -343,7 +343,21 @@
     "lambda_div(t)": "Log[1 + Abs[psi_scalar(t) - psi_observer(t)]]",
     "S_psi(t)": "-psi_scalar(t)^2 * Log[Abs[psi_scalar(t)^2 + 1e-10]]"
   },
-    {
+  "parameters": {
+    "m_scalar": 1e-22  // Effective ultralight scalar mass (Planck units)
+  },
+  "t_range": [0, 100],
+  "dt": 0.1,
+  "outputs": {
+    "scalar_field": "psi_scalar(t)",
+    "observer_field": "psi_observer(t)",
+    "divergence_metric": "lambda_div(t)",
+    "entropy_curvature": "S_psi(t)"
+  },
+  "interpretation": "This module simulates scalar-induced symbolic decoherence and entropy curvature, reflecting the impact of ultralight dark matter or clustered neutrinos on recursive observers.",
+  "citation": "Kim, Y. J., Manley, J. R., et al. (2024). *Limits on dark matter, ultralight scalars, and cosmic neutrinos with gyroscope spin and precision clocks*. [https://arxiv.org/abs/2403.15722](https://arxiv.org/abs/2403.15722). Adapted through symbolic recursion fields under the RFC observer model."
+  },
+  {
   "module": "R",
   "description": "Recursive Fractal Integral Cosmology (Symbolic Fractal Kernel Unification)",
   "delta": 4.669,
@@ -378,19 +392,5 @@
     "Pellis, M. (2024). The Equations of Unified Physics.",
     "Al-Refai, F. (2022–2024). Fractal Calculus Foundations."
   ]
-  },
-  "parameters": {
-    "m_scalar": 1e-22  // Effective ultralight scalar mass (Planck units)
-  },
-  "t_range": [0, 100],
-  "dt": 0.1,
-  "outputs": {
-    "scalar_field": "psi_scalar(t)",
-    "observer_field": "psi_observer(t)",
-    "divergence_metric": "lambda_div(t)",
-    "entropy_curvature": "S_psi(t)"
-  },
-  "interpretation": "This module simulates scalar-induced symbolic decoherence and entropy curvature, reflecting the impact of ultralight dark matter or clustered neutrinos on recursive observers.",
-  "citation": "Kim, Y. J., Manley, J. R., et al. (2024). *Limits on dark matter, ultralight scalars, and cosmic neutrinos with gyroscope spin and precision clocks*. [https://arxiv.org/abs/2403.15722](https://arxiv.org/abs/2403.15722). Adapted through symbolic recursion fields under the RFC observer model."
   }
 ]
