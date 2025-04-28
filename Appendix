@@ -252,7 +252,7 @@ I^{(\alpha)}[f(t)] \quad \text{Fractal integral (mean-square symbolic averaging)
 H^{(\alpha)}[f(t)] \quad \text{Fractal Hankel transform for modal recursion fields}
 \]
 
-where \alpha \in (0,1) encodes symbolic recursion depth and modal decay.
+where $\alpha \in (0,1)$ encodes symbolic recursion depth and modal decay.
 
 \subsection*{H.3 Updated Modules}
 
