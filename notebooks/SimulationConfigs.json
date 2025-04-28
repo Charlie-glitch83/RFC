@@ -343,6 +343,42 @@
     "lambda_div(t)": "Log[1 + Abs[psi_scalar(t) - psi_observer(t)]]",
     "S_psi(t)": "-psi_scalar(t)^2 * Log[Abs[psi_scalar(t)^2 + 1e-10]]"
   },
+    {
+  "module": "R",
+  "description": "Recursive Fractal Integral Cosmology (Symbolic Fractal Kernel Unification)",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu_values": [0.003, 0.006, 0.009],
+  "fractal_orders": {
+    "time_order": 0.9,
+    "space_order": 0.85
+  },
+  "t_range": [0, 120],
+  "dt": 0.05,
+  "fields": {
+    "psi_fractal(t; ν)": "Σ_{j=1}^{40} (1/δ^j) * cos(jt + ν) * exp(-αjt)",
+    "mass_fractal(ν)": "sqrt(mean of ψ_fractal(t; ν)^2 over t)",
+    "E_fractal(t)": "D_t^(2α)[ψ_fractal(t; ν)] + ψ_fractal(t; ν)^2",
+    "Λ_fractal": "1 / I^(α)[ψ_fractal(t; ν)^2]",
+    "collapse_curvature(t)": "∇²^(α)[Σ cos(jt + ν)]",
+    "entropy_recoil(t)": "-ψ_fractal(t; ν)^2 * Log[Abs(ψ_fractal(t; ν)^2 + 1e-10)]",
+    "observer_bifurcation(t)": "Log[1 + |ψ_fractal(t; ν) - ψ_fractal(t; ν+0.001)|]"
+  },
+  "outputs": {
+    "fractal_energy_curve": "E_fractal(t)",
+    "symbolic_mass_attractors": "mass_fractal(ν)",
+    "symbolic_cosmological_constant": "Λ_fractal",
+    "collapse_curvature_field": "collapse_curvature(t)",
+    "observer_entropy_recoil": "entropy_recoil(t)",
+    "bifurcation_divergence": "observer_bifurcation(t)"
+  },
+  "interpretation": "Module R synthesizes symbolic recursion, fractal derivatives, and recursive field bifurcation. It shows that mass, energy, cosmological constants, and decoherence all emerge from symbolic fractal modal fields — completing RFC’s transition into a fully symbolic-fractal cosmology.",
+  "citation": [
+    "Edward, A. (2025). Recursive Fractal Cosmology Presentations 24–26.",
+    "Pellis, M. (2024). The Equations of Unified Physics.",
+    "Al-Refai, F. (2022–2024). Fractal Calculus Foundations."
+  ]
+  },
   "parameters": {
     "m_scalar": 1e-22  // Effective ultralight scalar mass (Planck units)
   },
