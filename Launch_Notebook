@@ -1,9 +1,9 @@
-# Launch RFC Simulation Notebook
+# Launch Recursive Fractal Cosmology (RFC) Simulator
 
-[![Launch RFC Simulator in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Charlie-glitch83/RFC/HEAD?filepath=notebooks%2FRFC_Simulator.ipynb)
+[![Launch in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Charlie-glitch83/RFC/HEAD?filepath=notebooks%2FRFC_Simulator.ipynb)
 
-> Click the button above to run all RFC symbolic simulations (Modules A–Q) in your browser — no install required!
+> **Click the button above** to run the RFC symbolic simulation suite (Modules A–Q) in your browser — no installation required!
 
 ---
 **Repository:** [Charlie-glitch83/RFC](https://github.com/Charlie-glitch83/RFC)  
-**Primary Notebook:** `notebooks/RFC_Simulator.ipynb`
+**Notebook File:** `notebooks/RFC_Simulator.ipynb`
