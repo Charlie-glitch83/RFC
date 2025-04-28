@@ -228,4 +228,90 @@ Rebirth is modeled with:
 
 \textbf{Interpretation:} Collapse = symbolic resolution. Rebirth = recursive semantic reinitialization.
 
+\section*{Appendix H: Fractal Extension of Recursive Fractal Cosmology}
+
+\subsection*{H.1 Motivation}
+
+Recent results (Pellis, 2024; Al-Refai, 2022–2024) suggest fractal calculus provides a stronger formalism for recursive physical theories.  
+To anchor Recursive Fractal Cosmology (RFC) more deeply in symbolic physics, we upgrade symbolic fields into fractal derivative and integral forms.
+
+\subsection*{H.2 Core Fractal Operators}
+
+We adopt the following fractal operators:
+
+\[
+D_t^{(\alpha)} f(t) \quad \text{Fractal time derivative of order } \alpha
+\]
+\[
+\nabla^{2\alpha} f(x) \quad \text{Fractal Laplacian of order } \alpha
+\]
+\[
+I^{(\alpha)}[f(t)] \quad \text{Fractal integral (mean-square symbolic averaging)}
+\]
+\[
+H^{(\alpha)}[f(t)] \quad \text{Fractal Hankel transform for modal recursion fields}
+\]
+
+where \alpha \in (0,1) encodes symbolic recursion depth and modal decay.
+
+\subsection*{H.3 Updated Modules}
+
+\begin{itemize}
+\item \textbf{Module E (Neural Dynamics)}:
+\[
+D_t^{(2\alpha)} \phi = \nabla^{2\alpha} \phi - \lambda \phi + f_{\text{fract}}(x,y)
+\]
+Symbolic neural fields evolve under fractal wave propagation.
+
+\item \textbf{Module I (Symbolic Mass Field)}:
+\[
+\psi(t;\nu) = H^{(\alpha)}\left[\cos(jt+\nu)\right]
+\]
+Mass fields emerge from fractal harmonic compression.
+
+\item \textbf{Module N (Symbolic Constants Derivation)}:
+\[
+\alpha_{\text{EM}} = \frac{1}{I^{(\alpha)}[E(t)]}, \quad
+\alpha_G = m(\nu)^2, \quad
+\Lambda_{\text{symbolic}} = \frac{1}{I^{(\alpha)}[\psi(t)^2]}
+\]
+Fundamental constants derive from fractal averages.
+
+\item \textbf{Module O (Baryogenesis via Collapse Curvature)}:
+\[
+\kappa_{\text{collapse}}(t) = \nabla^{2\alpha} \left[\sum \cos(jt+\nu)\right]
+\]
+Symbolic curvature collapse modeled via fractal spatial derivatives.
+
+\item \textbf{Module Q (Scalar Decoherence Divergence)}:
+\[
+\lambda_{\text{div}}(t) = \log\left(1 + \left| \psi_{\text{observer}}(t) - \psi_{\text{scalar}}(t) \right|\right)
+\quad
+D_t^{(\alpha)}[S_{\psi}(t)] \quad \text{tracks decoherence entropy}
+\]
+Ultralight scalar fields induce fractal entropy divergence in recursive observers.
+\end{itemize}
+
+\subsection*{H.4 Physical Interpretation}
+
+Fractal operators naturally encode:
+
+\begin{itemize}
+\item Symbolic recursion compression across scales
+\item Nonlocal causal propagation (in both space and time)
+\item Emergent identity stabilization
+\item Collapse dynamics tied to symbolic fractal curvature
+\item Energy-mass duality from recursive RMS integration
+\end{itemize}
+
+RFC’s recursion kernels are now formally fractal integral operators under symbolic PDEs.
+
+\subsection*{H.5 References}
+
+\begin{itemize}
+\item Pellis, M. (2024). \textit{The Equations of Unified Physics}.
+\item Al-Refai, F. (2022–2024). \textit{Fractal Differential Equations of Fractional Orders}.
+\item Edward, A. (2025). \textit{Recursive Fractal Cosmology: Presentations 24–26}.
+\end{itemize}
+
 \end{document}
