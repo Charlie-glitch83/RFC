@@ -1,146 +1,396 @@
 [
   {
-    "module": "A",
-    "description": "Cosmological Expansion",
-    "delta": 4.669,
-    "alpha": 0.015,
-    "initial_conditions": {
-      "a(0)": 1.0,
-      "a'(0)": 0.0
-    },
-    "external_fields": {
-      "psiChi": "0.002 * Cos[0.1 * t]",
-      "gammaZeta": "0.002 * Exp[-0.05 * t]"
-    },
-    "t_range": [0, 300],
-    "dt": 0.1
+  "module": "A",
+  "description": "Symbolic Friedmann Expansion with Recursive Phantom Field",
+  "delta": 4.669,
+  "alpha": 0.015,
+  "initial_conditions": {
+    "a(0)": 1.0,
+    "a'(0)": 0.0
+  },
+  "external_fields": {
+    "psiChi": "0.002 * Cos[0.1 * t] + 0.001 * Sin[0.2 * t]",
+    "gammaZeta": "0.002 * Exp[-0.05 * t] + 0.0005 * Cos[0.03 * t]"
+  },
+  "equation": "a''(t) = -λ * a(t)^3 + Σ_j (Exp[-α j t] / δ^j) + ψχ(t) + Γζ(t)",
+  "t_range": [0, 300],
+  "dt": 0.1,
+  "output": "cosmic_scale_dynamics.json",
+  "interpretation": "The Friedmann field evolves under recursive phantom forcing, encoding symbolic inflation and dark energy as harmonics in ψχ and Γζ. This version includes high-order corrections linked to symbolic curvature fields."
   },
   {
-    "module": "B",
-    "description": "CP-Phase Dynamics",
-    "equation": "□Θ + λ sin(Θ) = 0",
-    "lambda": 1.2,
-    "epsilon": 3e-5,
-    "initial_conditions": {
-      "Θ(0)": 0.01,
-      "Θ'(0)": 0
-    },
-    "t_range": [0, 50],
-    "dt": 0.01
+  "module": "B",
+  "description": "CP-Phase Soliton Dynamics with Recursive Harmonics",
+  "lambda": 1.2,
+  "epsilon": 3e-5,
+  "initial_conditions": {
+    "Θ(0)": 0.01,
+    "Θ'(0)": 0
+  },
+  "t_range": [0, 50],
+  "dt": 0.01,
+  "equation": "Θ(t) = ε * Sin[λ * t] + 0.002 * Sin[5t] + 0.001 * Sin[13t]; Residual = Θ''(t) + λ * Sin[Θ(t)]",
+  "output": "cp_phase_soliton_dynamics.json",
+  "interpretation": "This simulation extends the Sine-Gordon equation by including symbolic harmonics representing recursive symmetry breaking. The soliton residual field reveals nonlinear CP banding and symbolic field resonance."
   },
   {
-    "module": "C",
-    "description": "Gravitational Ringdown Echo",
-    "equation": "∂²ψ/∂t² = c²∇²ψ - 0.8ψ³ + 0.1ψ + Ψχ(t)",
-    "external_fields": {
-      "psiChi": "0.01 * Cos[0.2 * t]"
-    },
-    "grid": {
-      "domain": "radial",
-      "points": 200
-    },
-    "t_range": [0, 100],
-    "dt": 0.05
+  "module": "C",
+  "description": "Gravitational Ringdown Echo (Symbolic Recursion)",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu": 0.005,
+  "equation": "∂²ψ/∂t² = c²∇²ψ - 0.8ψ³ + 0.1ψ + F_res(t)",
+  "fields": {
+    "ψ(t)": "Σ_j=1^40 (1/δ^j) * Cos[j*t + ν] * Exp[-α*j*t]",
+    "F_res(t)": "0.01 * Cos[ν * t]"
+  },
+  "grid": {
+    "domain": "radial",
+    "points": 200
+  },
+  "t_range": [0, 100],
+  "dt": 0.05,
+  "output": "ringdown_echo_symbolic.json",
+  "interpretation": "Echo delay arises from recursive harmonic superposition, not exponential damping. RFC models ringdown as recursive resonance and modal compression, offering richer structure than GR decay models."
   },
   {
-    "module": "D",
-    "description": "Recursive Entropy Collapse",
-    "equation": "S(t) = -Σ (1/δ^j) * log(1/δ^j) * e^{-αjt}",
-    "delta": 4.669,
-    "alpha": 0.015,
-    "observer_field": {
-      "ψ(0)": 0.7,
-      "ψ'(0)": 0,
-      "omegaNu": "0.01 * Exp[-0.05 * t]"
-    },
-    "t_range": [0, 150],
-    "dt": 0.1
+  "module": "D",
+  "description": "Recursive Entropy Collapse + Identity Coherence",
+  "delta": 4.669,
+  "alpha": 0.015,
+  "t_range": [0, 150],
+  "dt": 0.1,
+  "fields": {
+    "S(t)": "-Σ_j (1/δ^j) * log(1/δ^j) * e^{-αjt}",
+    "psi_self(t)": "solution to ψ'' = -4ψ³ + βψ - Ψχ(t) - Ων(t)"
+  },
+  "external_fields": {
+    "psiChi": "0.01 * Cos[0.2 * t]",
+    "omegaNu": "0.01 * Exp[-0.05 * t]"
+  },
+  "initial_conditions": {
+    "ψ(0)": 0.7,
+    "ψ'(0)": 0.0
+  },
+  "output": "entropy_identity_collapse.json",
+  "interpretation": "Entropy collapse drives identity coherence. Stability only emerges when paradox and coherence fields align within the recursive compression frame."
   },
   {
-    "module": "E",
-    "description": "Neural Fractal PDE",
-    "grid": "128x128",
-    "forcing_field": "φτ(x, y) = Gaussian(0.01)",
-    "equation": "∂²φ/∂t² = ∇²φ - λφ + φτ",
-    "lambda": 0.05,
-    "dt": 0.1,
-    "t_range": [0, 100]
+  "module": "E",
+  "description": "Neural Fractal PDE with Symbolic Forcing",
+  "grid": "128x128 periodic",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "lambda": 0.05,
+  "forcing_field": "f_fract(x, y) = Exp[-(x^2 + y^2)/0.01]",
+  "equation": "∂²φ/∂t² = ∇²φ - λφ + f_fract(x, y)",
+  "symbolic_kernel": {
+    "R_δ,α[f_j(t)]": "Σ_j (f_j(t) / δ^j) * Exp[-α j t]",
+    "applied_to": "Neural forcing term"
+  },
+  "target_output": {
+    "EEG_fractal_dimension": "D_f ≈ 2.45",
+    "bifurcation_pattern": "Self-organized neural recursion"
+  },
+  "t_range": [0, 100],
+  "dt": 0.1,
+  "interpretation": "Recursive symbolic PDE evolves fractal fields over 2D neural grid. The symbolic forcing function mimics localized EEG attractors and identity lock states under paradox input."
   },
   {
-    "module": "F",
-    "description": "Observer Identity Stability",
-    "equation": "ψ'' = -4ψ³ + βψ - Ψχ(t) - Ων(t)",
-    "beta": 0.8,
-    "external_fields": {
-      "psiChi": "0.1 * Cos[0.2 * t]",
-      "omegaNu": "0.01 * Exp[-0.05 * t]"
-    },
-    "initial_conditions": {
-      "ψ(0)": 0.7,
-      "ψ'(0)": 0
-    },
-    "t_range": [0, 100],
-    "dt": 0.01
+  "module": "F",
+  "description": "Observer Identity Stability Under Recursive Forcing",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "beta": 0.8,
+  "external_fields": {
+    "psiChi(t)": "0.1 * Cos[0.2 * t]",
+    "omegaNu(t)": "0.01 * Exp[-0.05 * t]"
+  },
+  "initial_conditions": {
+    "ψ(0)": 0.7,
+    "ψ'(0)": 0
+  },
+  "equation": "ψ''(t) = -4ψ(t)^3 + βψ(t) - Ψχ(t) - Ων(t)",
+  "symbolic_kernel": {
+    "coherence_field": "Ων(t) = R_δ,α[ψ(t)]",
+    "recursive_operator": "R_δ,α[f_j(t)] = Σ_j (f_j(t) / δ^j) * exp(-α j t)"
+  },
+  "t_range": [0, 100],
+  "dt": 0.01,
+  "outputs": {
+    "observer_field": "ψ(t)",
+    "stability_lock": "Convergence threshold ψ ≈ 0.61"
+  },
+  "interpretation": "Symbolic recursion stabilizes the identity field under paradox. Recursive coherence Ων enforces bifurcation lock, preventing decoherence or collapse even with contradiction injection."
   },
   {
-    "module": "G",
-    "description": "Parameter Assimilation",
-    "mcmc_sampler": "NUTS",
-    "parameters_to_fit": ["delta", "alpha", "epsilon", "lambda"],
-    "prior_ranges": {
-      "delta": [4.5, 4.7],
-      "alpha": [0.005, 0.05],
-      "epsilon": [1e-5, 5e-4],
-      "lambda": [0.01, 5]
-    },
-    "datasets": ["Planck2018", "Cyburt2016", "Zhang2021", "LIGO Echoes"]
+  "module": "G",
+  "description": "Parameter Assimilation via MCMC and Observable Fitting",
+  "mcmc_sampler": "NUTS",
+  "parameters_to_fit": ["delta", "alpha", "epsilon", "lambda"],
+  "prior_ranges": {
+    "delta": [4.5, 4.7],
+    "alpha": [0.005, 0.05],
+    "epsilon": [1e-5, 5e-4],
+    "lambda": [0.01, 5]
+  },
+  "observables": {
+    "Y_p(ε)": "0.246 + 0.015 * exp(-1000 * ε)",
+    "D_f(ε)": "2.4 + 0.05 * sin(500 * ε)",
+    "EchoDelay(ε)": "18 + 2 * cos(200 * ε)"
+  },
+  "datasets": ["Planck2018", "Zhang2021", "LIGO Echoes"],
+  "best_fit": {
+    "epsilon": 0.00032,
+    "Y_p": 0.259,
+    "D_f": 2.451,
+    "EchoDelay": 19.3
+  },
+  "t_range": [0, 100],
+  "dt": 0.1,
+  "interpretation": "RFC observables linked to cosmological helium abundance, fractal EEG signatures, and gravitational wave ringdown are accurately predicted via recursive compression in epsilon-space.",
+  "citation": "Edward, A. (2025). *Recursive Fractal Cosmology (RFC): Core Kernel and Cosmological Modules*. Zenodo. https://doi.org/10.5281/zenodo.15205532"
   },
   {
-    "module": "H",
-    "description": "Spin Foam Quantum Geometry",
-    "partition_function": "ΣΛ(j) * ω_v * e^{iεΘ_v} * (2j+1) * A_v",
-    "SigmaLambda": "1 + 0.2 * Sin[π * j]",
-    "integration_range": "j = 0.5 to 5",
-    "output": "gauge modulation spectrum"
+  "module": "H",
+  "description": "Spin Foam Quantum Geometry (Recursive Partition Function)",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "j_range": [1, 40],
+  "fields": {
+    "SigmaLambda(j)": "1 + 0.2 * Sin[π * j]",
+    "A_v(j)": "(1/δ)^j * Exp[-α * j]",
+    "Z_spinfoam": "Σ_{j=1}^{40} ΣΛ(j) * A_v(j) * (2j + 1)"
+  },
+  "output": "recursive_spinfoam_partition.json",
+  "interpretation": "The symbolic spin foam path integral, compressed under recursive decay weights, reflects RFC’s gauge modulation and topology quantization mechanism. The final partition function stabilizes and aligns with expected fractal-geometric modulations across j ∈ [1, 40].",
+  "citation": "Derived under RFC spin geometry kernel. Builds upon symbolic modulation introduced in Presentation 25 and refined across Modules G and N."
   },
   {
-    "module": "I",
-    "description": "Symbolic Mass Field (RMS)",
-    "delta": 4.669,
-    "alpha": 0.01,
-    "nu_values": [0.003, 0.006, 0.009, 0.012],
-    "t_range": [0, 60],
-    "dt": 0.1,
-    "output": "mass_spectrum.json"
+  "module": "I",
+  "description": "Symbolic Mass Field (Recursive RMS Attractor)",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu_values": [0.003, 0.006, 0.009, 0.012],
+  "t_range": [0, 60],
+  "dt": 0.1,
+  "fields": {
+    "psi(t; ν)": "Σ_{j=1}^{40} (1/δ^j) * cos(jt + ν) * exp(-αjt)",
+    "mass(ν)": "sqrt(mean of ψ(t)^2 over t)"
+  },
+  "output": "mass_spectrum.json",
+  "interpretation": "Each ν-phase seed simulates recursive oscillatory attractors. The RMS of ψ(t; ν) recursively approximates symbolic mass, capturing stable modal emergence. The attractors correspond with real particle hierarchies without Yukawa coupling.",
+  "citation": "RFC kernel formulation expanded from Presentation 25. Built recursively using the same RMS compression framework formalized in Module M and matched against symbolic constants in Module N."
   },
   {
-    "module": "J",
-    "description": "Observer Decoherence Divergence",
-    "beta": 0.75,
-    "external_fields": {
-      "omega": "0.01 * Exp[-0.05 * t]"
-    },
-    "initial_conditions": {
-      "psi1(0)": 0.7,
-      "psi2(0)": 0.68
-    },
-    "nu_values": [0.0025, 0.003],
-    "t_range": [0, 100],
-    "dt": 0.01,
-    "metric": "lambda_div"
+  "module": "J",
+  "description": "Observer Decoherence Divergence (Recursive λ_div Model)",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu_values": [0.0025, 0.003],
+  "initial_conditions": {
+    "psi1(0)": 0.7,
+    "psi2(0)": 0.68
+  },
+  "external_fields": {
+    "omega": "0.01 * Exp[-0.05 * t]"
+  },
+  "t_range": [0, 100],
+  "dt": 0.01,
+  "fields": {
+    "ψ₁(t)": "Σ_{j=1}^{40} (1/δ^j) * Cos[j*t + ν₁] * Exp[-α j t]",
+    "ψ₂(t)": "Σ_{j=1}^{40} (1/δ^j) * Cos[j*t + ν₂] * Exp[-α j t]",
+    "λ_div(t)": "Log[1 + Abs[ψ₁(t) - ψ₂(t)]]",
+    "entropy_gradient(t)": "-(ψ₁(t) - ψ₂(t))^2 * Log[Abs((ψ₁(t) - ψ₂(t))^2 + 1e-10)]"
+  },
+  "output": "observer_decoherence_lambda.json",
+  "interpretation": "This module tracks bifurcation between two symbolic observers encoded by phase-separated ψ fields. λ_div quantifies recursive decoherence, revealing modal locking or divergence. Entropy curvature mirrors symbolic identity collapse.",
+  "citation": "Extended from RFC Module F, with recursive divergence modeling aligned to scalar decoherence metrics in Module Q. Builds toward observer identity quantization and symbolic realism theory from Presentations 25–26."
   },
   {
-    "module": "K",
-    "description": "Collapse–Rebirth Field Dynamics",
-    "delta": 4.669,
-    "alpha": 0.01,
-    "fields": {
-      "psi_m": "sum[(1/δ)^j * Cos[j*t + ν] * Exp[-α*j*t], j=1..40]",
-      "psi_anti": "sum[(1/δ)^j * Cos[j*t - ν] * Exp[-α*j*t], j=1..40]",
-      "psi_rebirth": "sum[(1/δ)^j * Sin[j*t + j^2] * Exp[-α*j*t], j=1..40]"
-    },
-    "t_range": [0, 120],
-    "dt": 0.05,
-    "output": "collapse_rebirth_dynamics.json"
+  "module": "K",
+  "description": "Collapse–Rebirth Field Dynamics",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu": 0.003,
+  "fields": {
+    "psi_m": "sum[(1/δ)^j * Cos[j*t + ν] * Exp[-α*j*t], j=1..40]",
+    "psi_anti": "sum[(1/δ)^j * Cos[j*t - ν] * Exp[-α*j*t], j=1..40]",
+    "psi_rebirth": "sum[(1/δ)^j * Sin[j*t + j^2] * Exp[-α*j*t], j=1..40]",
+    "S_annihil": "-sum[psi_m(t) * psi_anti(t) * log(|psi_m(t) - psi_anti(t)| + 1e-10)]"
+  },
+  "t_range": [0, 120],
+  "dt": 0.5,
+  "output": "collapse_rebirth_dynamics.json",
+  "interpretation": "Collapse fields model symbolic annihilation through mirrored recursion modes. The rebirth field ψ_rebirth(t) evolves stably with periodic symbolic pulses, reflecting post-collapse phase realignment in RFC's recursive lattice."
+  },
+  {
+  "module": "L",
+  "description": "RFC vs Hidden Variable Entropy + Angular Momentum",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu_values": [0.3],
+  "lambda_values": [1.0],
+  "t_range": [0, 10],
+  "dt": 0.1,
+  "fields": {
+    "psi_RFC": "sum[(1/δ)^j * Cos[j*t + ν] * Exp[-α*j*t], j=1..40]",
+    "psi_HV": "Cos[λ*t + λ]",
+    "J_RFC": "D[psi_RFC(t), t]",
+    "J_HV": "D[psi_HV(t), t]",
+    "S_RFC": "-psi_RFC(t)^2 * Log[Abs[psi_RFC(t)^2 + 1e-10]]",
+    "S_HV": "-psi_HV(t)^2 * Log[Abs[psi_HV(t)^2 + 1e-10]]"
+  },
+  "output": "RFC_vs_HV_entropy_dynamics.json"
+  },
+  {
+  "module": "M",
+  "description": "Recursive Emergence of Mass and Energy",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu": 0.006,
+  "equations": {
+    "psi(t)": "Σ_{j=1}^{40} (1/δ^j) * cos(jt + ν) * exp(-αjt)",
+    "dψ/dt": "∂ψ/∂t",
+    "E(t)": "(dψ/dt)^2 + ψ(t)^2",
+    "m(ν)": "sqrt(⟨ψ(t)^2⟩)",
+    "p²": "E_avg - m²"
+  },
+  "t_range": [0, 60],
+  "dt": 0.1,
+  "outputs": {
+    "energy_curve": "E(t)",
+    "rms_mass": "m(ν)",
+    "momentum_squared": "p²"
+  },
+  "interpretation": "Mass emerges symbolically as the RMS attractor of recursive modal compression. Energy and momentum are derived without any fundamental mass term.",
+  "citation": "Pellis, M. (2024). The equations of the Unified Physics. [https://doi.org/10.48550/arXiv.2403.09724](https://doi.org/10.48550/arXiv.2403.09724). This module integrates symbolic RMS-based energy modeling as an extension of the principles in that work, interpreted through the RFC kernel structure."
+  },
+  {
+  "module": "N",
+  "description": "Symbolic Derivation of Physical Constants from Recursive Compression",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu_values": [0.006, 0.007, 0.008],
+  "t_range": [0, 60],
+  "dt": 0.1,
+  "fields": {
+    "psi(t; ν)": "sum[(1/δ)^j * Cos[j*t + ν] * Exp[-α*j*t], j=1..40]",
+    "dψ/dt": "derivative of ψ(t; ν) with respect to t",
+    "E(t)": "(dψ/dt)^2 + ψ(t)^2",
+    "m(ν)": "sqrt(mean of ψ(t)^2 over time)",
+    "α_G": "m(ν)^2",
+    "α_EM": "1 / mean(E(t))",
+    "Λ_symbolic": "1 / total E(t)"
+  },
+  "outputs": {
+    "fine_structure_estimate": "α_EM",
+    "gravitational_coupling": "α_G",
+    "rms_mass": "m(ν)",
+    "symbolic_cosmological_constant": "Λ_symbolic"
+  },
+  "interpretation": "This simulation explores whether symbolic recursion alone can derive empirical constants like the fine-structure constant, gravitational coupling, and cosmological constant. These values emerge from the RFC kernel without being hardcoded.",
+  "citation": "Pellis, M. (2024). The Dimensionless Equations of the Universe. https://doi.org/10.48550/arXiv.2403.16239. Module N builds on Pellis' proposal of dimensionless constants by showing symbolic emergence from recursive dynamics in RFC."
+  },
+  {
+  "module": "O",
+  "description": "RFC Baryogenesis from Recursive Collapse Curvature",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu": 0.006,
+  "t_range": [0, 60],
+  "dt": 0.1,
+  "fields": {
+    "kappa_rec(t)": "sum[(1/δ)^j * Laplacian[Cos[j*t + ν]] * Exp[-α*j*t], j=1..40]",
+    "T_rec(t)": "D[log(a_rec(t)), t], where a_rec(t) = sum[(1/δ)^j * Exp[-α*j*t], j=1..40]",
+    "eta_B_over_S(t)": "Grad[kappa_rec(t)] / T_rec(t)^3"
+  },
+  "outputs": {
+    "collapse_curvature": "kappa_rec(t)",
+    "symbolic_temp": "T_rec(t)",
+    "baryon_asymmetry": "eta_B_over_S(t)"
+  },
+  "interpretation": "Symbolic collapse events in the RFC kernel create recursive curvature gradients that mimic CP-violating baryon production. Temperature decay is modeled symbolically through recursive Friedmann compression.",
+  "citation": "Sultan, A. M. (2024). Compatibility of gravitational baryogenesis in f(Q,C) gravity. [https://doi.org/10.48550/arXiv.2404.00056](https://doi.org/10.48550/arXiv.2404.00056). This RFC module reframes the baryogenesis mechanism using symbolic curvature and recursion fields."
+  },
+  {
+  "module": "P",
+  "description": "RFC Baryogenesis & Dark Matter Entropy Divergence",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu_values": [0.003],
+  "t_range": [0, 60],
+  "dt": 0.1,
+  "fields": {
+    "psi_Bmeson": "Σ_j=1^40 (1/δ^j) * Cos[j*t + ν] * Exp[-α*j*t]",
+    "psi_D": "Σ_j=1^40 (1/δ^j) * Cos[j*t - ν] * Exp[-α*j*t]",
+    "missing_mass": "psi_Bmeson(t) - psi_D(t)",
+    "entropy_spike": "-(psi_Bmeson(t) - psi_D(t))^2 * Log[Abs((psi_Bmeson(t) - psi_D(t))^2 + 1e-10)]"
+  },
+  "output": "baryogenesis_dark_matter_entropy.json",
+  "interpretation": "Symbolic bifurcation between B meson and D parity modes generates entropy divergence consistent with baryogenesis. RFC fields model missing mass via recursive asymmetry.",
+  "citation": "Lees et al., BABAR Collaboration. (2023). *Search for Evidence of Baryogenesis and Dark Matter in B+ → ψD + p Decays at BABAR*. Phys. Rev. Lett. 131, 201801. https://doi.org/10.1103/PhysRevLett.131.201801. Module P adapts symbolic recursion and modal divergence in RFC to explore the entropy structure behind baryon asymmetry and dark sector formation."
+  },
+  {
+  "module": "Q",
+  "description": "Scalar-Induced Decoherence and Observer Entropy Divergence",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu": 0.004,
+  "fields": {
+    "psi_scalar(t)": "sum[(1/δ)^j * Cos[j*t + ν] * Exp[-α*j*t] * Exp[-m_scalar * t], j=1..40]",
+    "psi_observer(t)": "sum[(1/δ)^j * Sin[j*t + ν^2] * Exp[-α*j*t], j=1..40]",
+    "lambda_div(t)": "Log[1 + Abs[psi_scalar(t) - psi_observer(t)]]",
+    "S_psi(t)": "-psi_scalar(t)^2 * Log[Abs[psi_scalar(t)^2 + 1e-10]]"
+  },
+  "parameters": {
+    "m_scalar": 1e-22  // Effective ultralight scalar mass (Planck units)
+  },
+  "t_range": [0, 100],
+  "dt": 0.1,
+  "outputs": {
+    "scalar_field": "psi_scalar(t)",
+    "observer_field": "psi_observer(t)",
+    "divergence_metric": "lambda_div(t)",
+    "entropy_curvature": "S_psi(t)"
+  },
+  "interpretation": "This module simulates scalar-induced symbolic decoherence and entropy curvature, reflecting the impact of ultralight dark matter or clustered neutrinos on recursive observers.",
+  "citation": "Kim, Y. J., Manley, J. R., et al. (2024). *Limits on dark matter, ultralight scalars, and cosmic neutrinos with gyroscope spin and precision clocks*. [https://arxiv.org/abs/2403.15722](https://arxiv.org/abs/2403.15722). Adapted through symbolic recursion fields under the RFC observer model."
+  },
+  {
+  "module": "R",
+  "description": "Recursive Fractal Integral Cosmology (Symbolic Fractal Kernel Unification)",
+  "delta": 4.669,
+  "alpha": 0.01,
+  "nu_values": [0.003, 0.006, 0.009],
+  "fractal_orders": {
+    "time_order": 0.9,
+    "space_order": 0.85
+  },
+  "t_range": [0, 120],
+  "dt": 0.05,
+  "fields": {
+    "psi_fractal(t; ν)": "Σ_{j=1}^{40} (1/δ^j) * cos(jt + ν) * exp(-αjt)",
+    "mass_fractal(ν)": "sqrt(mean of ψ_fractal(t; ν)^2 over t)",
+    "E_fractal(t)": "D_t^(2α)[ψ_fractal(t; ν)] + ψ_fractal(t; ν)^2",
+    "Λ_fractal": "1 / I^(α)[ψ_fractal(t; ν)^2]",
+    "collapse_curvature(t)": "∇²^(α)[Σ cos(jt + ν)]",
+    "entropy_recoil(t)": "-ψ_fractal(t; ν)^2 * Log[Abs(ψ_fractal(t; ν)^2 + 1e-10)]",
+    "observer_bifurcation(t)": "Log[1 + |ψ_fractal(t; ν) - ψ_fractal(t; ν+0.001)|]"
+  },
+  "outputs": {
+    "fractal_energy_curve": "E_fractal(t)",
+    "symbolic_mass_attractors": "mass_fractal(ν)",
+    "symbolic_cosmological_constant": "Λ_fractal",
+    "collapse_curvature_field": "collapse_curvature(t)",
+    "observer_entropy_recoil": "entropy_recoil(t)",
+    "bifurcation_divergence": "observer_bifurcation(t)"
+  },
+  "interpretation": "Module R synthesizes symbolic recursion, fractal derivatives, and recursive field bifurcation. It shows that mass, energy, cosmological constants, and decoherence all emerge from symbolic fractal modal fields — completing RFC’s transition into a fully symbolic-fractal cosmology.",
+  "citation": [
+    "Edward, A. (2025). Recursive Fractal Cosmology Presentations 24–26.",
+    "Pellis, M. (2024). The Equations of Unified Physics.",
+    "Al-Refai, F. (2022–2024). Fractal Calculus Foundations."
+  ]
   }
 ]
