@@ -6,7 +6,7 @@ Screenshots of notebook plots for quick reference.
 ## Module Outputs (Images)
 
 - **Module A (Cosmology - Friedmann)**: Hubble evolution and scale factor  
-  ![Module A](Module_A .jpg)
+  ![Module A](Module_A.jpg)
 
 - **Module B (CP Phase / EDM)**: Soliton band and stability  
   ![Module B](Module_B.jpg)
