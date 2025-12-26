@@ -1,7 +1,7 @@
 # 05 - Static Simulation Results
 
-Pre-computed visual outputs from running RFC_Simulator.ipynb (Modules A–Q).  
-All images are screenshots of notebook plots for quick reference and AI ingestion.
+Pre-computed visual outputs from RFC_Simulator.ipynb (Modules A–Q).  
+Screenshots of notebook plots for quick reference.
 
 ## Module Outputs (Images)
 
@@ -57,4 +57,4 @@ All images are screenshots of notebook plots for quick reference and AI ingestio
   ![Module Q](Module_Q.jpg)
 
 
-These images demonstrate empirical alignments (e.g., Planck, LIGO, EEG, etc.) and are directly reproducible via the notebook in the root.
+These images show empirical alignments (Planck, LIGO, EEG, etc.) and are reproducible via the root notebook.
