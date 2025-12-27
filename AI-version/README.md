@@ -36,8 +36,8 @@ https://github.com/Charlie-glitch83/RFC/tree/main/AI-version
 The folder contains:
 - README.md (overview)
 - Multiple .md files with summaries, equations, empirical alignments, resolved objections, static results, and prompt templates
-- Original development documents with the Author of RFC Allan Edward working with AI to translate his mostly metaphysical theory into a purely scientific theory(Transfer_Of_Info_1.md, Transfer_Of_Info_2.md,Transfer_Of_Info_3.md,Transfer_Of_Info_4.md, Transfer_Of_Info_5.md, Transfer_Of_Info_1.md, Old_Math_Bucket.md, Math_Bucket.md, Tightened_Math_Bucket.md)
-- Preprint PDFs created by the work the Author and AI did in the Original development documents,  which are publicly available preprints(Presentations 24, 25, 26)
+- Original development documents with the Author of RFC Allan Edward working with AI to translate his mostly metaphysical theory into a purely scientific theory (Transfer_Of_Info_1.md, Transfer_Of_Info_2.md,Transfer_Of_Info_3.md,Transfer_Of_Info_4.md, Transfer_Of_Info_5.md, Transfer_Of_Info_1.md, Old_Math_Bucket.md, Math_Bucket.md, Tightened_Math_Bucket.md)
+- Preprint PDFs created by the work the Author and AI did in the Original development documents,  which are publicly available.      (Presentations 24, 25, 26)
 - Screenshots of simulation outputs (Module_A.jpg through Module_Q.jpg)
 
 Task:  
