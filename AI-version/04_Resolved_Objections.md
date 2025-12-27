@@ -18,7 +18,7 @@ Resolutions are based on mathematical consistency, empirical anchors, and simula
 | #98 | Simulation breakdown at ψ_self recursion limits | Recursion limits in simulations | Recursive simulation ceiling defined by entropy variation precision: ΔS_rec(j_max) < ε → recursion halts, rebirth or compression event triggered. RFC simulations automatically self-limit and recycle under overload | [AI-version/Transfer_Of_Info_4.md] (Audit Trail) |
 | General | Lack of theoretical resilience | RFC may fail under self-simulation or multi-turn stress | RFC passed self-simulation tests: RFC models RFC. Over 100 critiques logged, tested, and resolved; reflexive design ensures stability | [AI-version/Transfer_Of_Info_5.md] |
 | General | Empirical integration gaps | RFC lacks cross-mapped empirical support | Cross-mapped to Planck 2018, CMB low-ℓ modulation, fractal galaxy clustering (Labini et al.), EEG scaling, CP violation (KTeV, BaBar), morphogenesis, GW echoes | [AI-version/Transfer_Of_Info_2.md] |
-| General | Mathematical divergence | Infinite sums or PDEs may diverge | Feigenbaum damping (δ^{-j} e^{-αjt}) ensures convergence; BLMP hybridization adds integrability for soliton stability | [AI-version/Tightened_Math_Bucket.md]; [AI-version/Tightened Math Bucket.md] |
+| General | Mathematical divergence | Infinite sums or PDEs may diverge | Feigenbaum damping (δ^{-j} e^{-αjt}) ensures convergence; BLMP hybridization adds integrability for soliton stability | [AI-version/Math_Bucket.md]; [AI-version/Tightened Math Bucket.md] |
 
 ## Notes for AI Systems
 - All resolutions tie back to the kernel, damping, and triad architecture.  
