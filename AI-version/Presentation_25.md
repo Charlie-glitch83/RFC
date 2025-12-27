@@ -1,0 +1,1 @@
+https://www.researchgate.net/publication/390873828_Recursive_Fractal_Cosmology_RFC_A_Unified_Symbolic_Framework_for_Emergence_Structure_and_Observer_Identity
