@@ -1,0 +1,1 @@
+https://www.researchgate.net/publication/390948720_Recursive_Fractal_Cosmology_RFC_A_Theory_of_Everything_That_Provides_More_Answers_Than_Questions
