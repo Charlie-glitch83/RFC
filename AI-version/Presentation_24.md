@@ -1,0 +1,1 @@
+https://www.researchgate.net/publication/390740510_Recursive_Fractal_Cosmology_A_Symbolic_Field_Theory_of_Emergence_Identity_and_Time
